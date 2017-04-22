@@ -1,0 +1,828 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/stephenwvickers/node-raw-socket#readme"
+
+    >raw-socket (v1.5.1)</a>
+</h1>
+<h4>Raw sockets for Node.js.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.raw-socket">module raw-socket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket">
+            function <span class="apidocSignatureSpan">raw-socket.</span>Socket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.createChecksum">
+            function <span class="apidocSignatureSpan">raw-socket.</span>createChecksum
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.createSocket">
+            function <span class="apidocSignatureSpan">raw-socket.</span>createSocket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.htonl">
+            function <span class="apidocSignatureSpan">raw-socket.</span>htonl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.htons">
+            function <span class="apidocSignatureSpan">raw-socket.</span>htons
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.ntohl">
+            function <span class="apidocSignatureSpan">raw-socket.</span>ntohl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.ntohs">
+            function <span class="apidocSignatureSpan">raw-socket.</span>ntohs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.writeChecksum">
+            function <span class="apidocSignatureSpan">raw-socket.</span>writeChecksum
+            <span class="apidocSignatureSpan">(buffer, offset, checksum)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">raw-socket.</span>AddressFamily</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">raw-socket.</span>Protocol</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">raw-socket.</span>Socket.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">raw-socket.</span>SocketLevel</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">raw-socket.</span>SocketOption</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.raw-socket.Socket">module raw-socket.Socket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.Socket">
+            function <span class="apidocSignatureSpan">raw-socket.</span>Socket
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.super_">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.raw-socket.Socket.prototype">module raw-socket.Socket.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.close">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.getOption">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>getOption
+            <span class="apidocSignatureSpan">(level, option, value, length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.onClose">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onClose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.onError">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.onRecvReady">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onRecvReady
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.onSendReady">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onSendReady
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.pauseRecv">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>pauseRecv
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.pauseSend">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>pauseSend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.resumeRecv">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>resumeRecv
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.resumeSend">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>resumeSend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.send">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>send
+            <span class="apidocSignatureSpan">(buffer, offset, length, address, beforeCallback, afterCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raw-socket.Socket.prototype.setOption">
+            function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>setOption
+            <span class="apidocSignatureSpan">(level, option, value, length)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.raw-socket" id="apidoc.module.raw-socket">module raw-socket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket" id="apidoc.element.raw-socket.Socket">
+        function <span class="apidocSignatureSpan">raw-socket.</span>Socket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Socket(options) {
+	Socket.super_.call (this);
+
+	this.requests = [];
+	this.buffer = new Buffer ((options &#x26;&#x26; options.bufferSize)
+			? options.bufferSize
+			: 4096);
+
+	this.recvPaused = false;
+	this.sendPaused = true;
+
+	this.wrap = new raw.SocketWrap (
+			((options &#x26;&#x26; options.protocol)
+					? options.protocol
+					: 0),
+			((options &#x26;&#x26; options.addressFamily)
+					? options.addressFamily
+					: AddressFamily.IPv4)
+		);
+
+	var me = this;
+	this.wrap.on (&#x22;sendReady&#x22;, this.onSendReady.bind (me));
+	this.wrap.on (&#x22;recvReady&#x22;, this.onRecvReady.bind (me));
+	this.wrap.on (&#x22;error&#x22;, this.onError.bind (me));
+	this.wrap.on (&#x22;close&#x22;, this.onClose.bind (me));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.createChecksum" id="apidoc.element.raw-socket.createChecksum">
+        function <span class="apidocSignatureSpan">raw-socket.</span>createChecksum
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createChecksum = function () {
+	var sum = 0;
+	for (var i = 0; i &#x3c; arguments.length; i++) {
+		var object = arguments[i];
+		if (object instanceof Buffer) {
+			sum = raw.createChecksum (sum, object, 0, object.length);
+		} else {
+			sum = raw.createChecksum (sum, object.buffer, object.offset,
+					object.length);
+		}
+	}
+	return sum;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Both buffers will be treated as one, i.e. as if the data at offset `20` in
+`tcp_packet` had followed all data in `pseudo_header` - as if they were one
+buffer.
+
+## raw.writeChecksum (buffer, offset, checksum)
+
+The `writeChecksum()` function writes a checksum created by the
+`raw.<span class="apidocCodeKeywordSpan">createChecksum</span>()` function to the [Node.js][nodejs] `Buffer` object
+`buffer` at offsets `offset` and `offset` + 1.
+
+The following example generates and writes a checksum at offset `2` in a
+[Node.js][nodejs] `Buffer` object:
+
+raw.writeChecksum (buffer, 2, raw.createChecksum (buffer));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.createSocket" id="apidoc.element.raw-socket.createSocket">
+        function <span class="apidocSignatureSpan">raw-socket.</span>createSocket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSocket = function (options) {
+	return new Socket (options || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.htonl" id="apidoc.element.raw-socket.htonl">
+        function <span class="apidocSignatureSpan">raw-socket.</span>htonl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">htonl = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.htons" id="apidoc.element.raw-socket.htons">
+        function <span class="apidocSignatureSpan">raw-socket.</span>htons
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">htons = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.ntohl" id="apidoc.element.raw-socket.ntohl">
+        function <span class="apidocSignatureSpan">raw-socket.</span>ntohl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ntohl = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.ntohs" id="apidoc.element.raw-socket.ntohs">
+        function <span class="apidocSignatureSpan">raw-socket.</span>ntohs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ntohs = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.writeChecksum" id="apidoc.element.raw-socket.writeChecksum">
+        function <span class="apidocSignatureSpan">raw-socket.</span>writeChecksum
+        <span class="apidocSignatureSpan">(buffer, offset, checksum)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeChecksum = function (buffer, offset, checksum) {
+	buffer.writeUInt8 ((checksum &#x26; 0xff00) &#x3e;&#x3e; 8, offset);
+	buffer.writeUInt8 (checksum &#x26; 0xff, offset + 1);
+	return buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.raw-socket.Socket" id="apidoc.module.raw-socket.Socket">module raw-socket.Socket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.Socket" id="apidoc.element.raw-socket.Socket.Socket">
+        function <span class="apidocSignatureSpan">raw-socket.</span>Socket
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Socket(options) {
+	Socket.super_.call (this);
+
+	this.requests = [];
+	this.buffer = new Buffer ((options &#x26;&#x26; options.bufferSize)
+			? options.bufferSize
+			: 4096);
+
+	this.recvPaused = false;
+	this.sendPaused = true;
+
+	this.wrap = new raw.SocketWrap (
+			((options &#x26;&#x26; options.protocol)
+					? options.protocol
+					: 0),
+			((options &#x26;&#x26; options.addressFamily)
+					? options.addressFamily
+					: AddressFamily.IPv4)
+		);
+
+	var me = this;
+	this.wrap.on (&#x22;sendReady&#x22;, this.onSendReady.bind (me));
+	this.wrap.on (&#x22;recvReady&#x22;, this.onRecvReady.bind (me));
+	this.wrap.on (&#x22;error&#x22;, this.onError.bind (me));
+	this.wrap.on (&#x22;close&#x22;, this.onClose.bind (me));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.super_" id="apidoc.element.raw-socket.Socket.super_">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.raw-socket.Socket.prototype" id="apidoc.module.raw-socket.Socket.prototype">module raw-socket.Socket.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.close" id="apidoc.element.raw-socket.Socket.prototype.close">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+	this.wrap.close ();
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.getOption" id="apidoc.element.raw-socket.Socket.prototype.getOption">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>getOption
+        <span class="apidocSignatureSpan">(level, option, value, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOption = function (level, option, value, length) {
+	return this.wrap.getOption (level, option, value, length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.onClose" id="apidoc.element.raw-socket.Socket.prototype.onClose">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onClose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onClose = function () {
+	this.emit (&#x22;close&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.onError" id="apidoc.element.raw-socket.Socket.prototype.onError">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (error) {
+	this.emit (&#x22;error&#x22;, error);
+	this.close ();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.onRecvReady" id="apidoc.element.raw-socket.Socket.prototype.onRecvReady">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onRecvReady
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onRecvReady = function () {
+	var me = this;
+	try {
+		this.wrap.recv (this.buffer, function (buffer, bytes, source) {
+			var newBuffer = buffer.slice (0, bytes);
+			me.emit (&#x22;message&#x22;, newBuffer, source);
+		});
+	} catch (error) {
+		me.emit (&#x22;error&#x22;, error);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.onSendReady" id="apidoc.element.raw-socket.Socket.prototype.onSendReady">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>onSendReady
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onSendReady = function () {
+	if (this.requests.length &#x3e; 0) {
+		var me = this;
+		var req = this.requests.shift ();
+		try {
+			if (req.beforeCallback)
+				req.beforeCallback ();
+			this.wrap.send (req.buffer, req.offset, req.length,
+					req.address, function (bytes) {
+				req.afterCallback.call (me, null, bytes);
+			});
+		} catch (error) {
+			req.afterCallback.call (me, error, 0);
+		}
+	} else {
+		if (! this.sendPaused)
+			this.pauseSend ();
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ * Default protocol option to `createSession()` was incorrect in the README.md
+ * The `session.on(&#x22;message&#x22;)` example used `message` instead of `buffer` in
+   the README.md
+
+## Version 1.1.3 - 04/03/2013
+
+ * `raw.Socket.<span class="apidocCodeKeywordSpan">onSendReady</span>()` emit&#x27;s an error when `raw.SocketWrap.send()`
+   throws an exception when it should call the `req.callback` callback
+ * Added the `pauseRecv()`, `resumeRecv()`, `pauseSend()` and `resumeSend()`
+   methods
+
+[net-ping]: https://npmjs.org/package/net-ping &#x22;net-ping&#x22;
+
+## Version 1.1.4 - 05/03/2013
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.pauseRecv" id="apidoc.element.raw-socket.Socket.prototype.pauseRecv">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>pauseRecv
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pauseRecv = function () {
+	this.recvPaused = true;
+	this.wrap.pause (this.recvPaused, this.sendPaused);
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.pauseSend" id="apidoc.element.raw-socket.Socket.prototype.pauseSend">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>pauseSend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pauseSend = function () {
+	this.sendPaused = true;
+	this.wrap.pause (this.recvPaused, this.sendPaused);
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.resumeRecv" id="apidoc.element.raw-socket.Socket.prototype.resumeRecv">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>resumeRecv
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resumeRecv = function () {
+	this.recvPaused = false;
+	this.wrap.pause (this.recvPaused, this.sendPaused);
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.resumeSend" id="apidoc.element.raw-socket.Socket.prototype.resumeSend">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>resumeSend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resumeSend = function () {
+	this.sendPaused = false;
+	this.wrap.pause (this.recvPaused, this.sendPaused);
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.send" id="apidoc.element.raw-socket.Socket.prototype.send">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>send
+        <span class="apidocSignatureSpan">(buffer, offset, length, address, beforeCallback, afterCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (buffer, offset, length, address, beforeCallback, afterCallback) {
+	if (! afterCallback) {
+		afterCallback = beforeCallback;
+		beforeCallback = null;
+	}
+
+	if (length + offset &#x3e; buffer.length)  {
+		afterCallback.call (this, new Error (&#x22;Buffer length &#x27;&#x22; + buffer.length
+				+ &#x22;&#x27; is not large enough for the specified offset &#x27;&#x22; + offset
+				+ &#x22;&#x27; plus length &#x27;&#x22; + length + &#x22;&#x27;&#x22;));
+		return this;
+	}
+
+	if (! net.isIP (address)) {
+		afterCallback.call (this, new Error (&#x22;Invalid IP address &#x27;&#x22; + address + &#x22;&#x27;&#x22;));
+		return this;
+	}
+
+	var req = {
+		buffer: buffer,
+		offset: offset,
+		length: length,
+		address: address,
+		afterCallback: afterCallback,
+		beforeCallback: beforeCallback
+	};
+	this.requests.push (req);
+
+	if (this.sendPaused)
+		this.resumeSend ();
+
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ * Default protocol option to `createSession()` was incorrect in the README.md
+ * The `session.on(&#x22;message&#x22;)` example used `message` instead of `buffer` in
+   the README.md
+
+## Version 1.1.3 - 04/03/2013
+
+ * `raw.Socket.onSendReady()` emit&#x27;s an error when `raw.SocketWrap.<span class="apidocCodeKeywordSpan">send</span>()`
+   throws an exception when it should call the `req.callback` callback
+ * Added the `pauseRecv()`, `resumeRecv()`, `pauseSend()` and `resumeSend()`
+   methods
+
+[net-ping]: https://npmjs.org/package/net-ping &#x22;net-ping&#x22;
+
+## Version 1.1.4 - 05/03/2013
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raw-socket.Socket.prototype.setOption" id="apidoc.element.raw-socket.Socket.prototype.setOption">
+        function <span class="apidocSignatureSpan">raw-socket.Socket.prototype.</span>setOption
+        <span class="apidocSignatureSpan">(level, option, value, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOption = function (level, option, value, length) {
+	if (arguments.length &#x3e; 3)
+		this.wrap.setOption (level, option, value, length);
+	else
+		this.wrap.setOption (level, option, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
